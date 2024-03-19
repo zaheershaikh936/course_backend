@@ -5,8 +5,13 @@ import { CourseModule } from './course/course.module';
 import { EnrollModule } from './enroll/enroll.module';
 
 @Module({
-  imports: [MongooseModule.forRoot(process.env.DB), CourseModule, EnrollModule],
+  imports: [
+    MongooseModule.forRoot(String(process.env.DB)),
+    CourseModule,
+    EnrollModule,
+  ],
   controllers: [],
   providers: [],
 })
 export class AppModule {}
+c
